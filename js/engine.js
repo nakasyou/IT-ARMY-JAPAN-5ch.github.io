@@ -36,7 +36,7 @@ function shoot(){
 	var randomID = Number(new Date());
 	resource.onload = function () { score_requested(); }; //A no ser que el objetivo sea una im醙en siempre
 	resource.onerror = function () { score_requested(); }; //va a dar error, pero mientras obtenga una
-	resource.setAttribute("src", target + "?LOWC=" + msg); //una respuesta del servidor me vale.
+	resource.setAttribute("src", target + "?THOWC=" + msg); //una respuesta del servidor me vale.
 
 	request[randomID] = resource;
 	score_tail();
