@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-	      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	      <title>THOWC (Tashiro High Orbit Web Cannon)</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>THOWC (Tashiro High Orbit Web Cannon)</title>
         <link href="css/style.css" media="all" rel="stylesheet" />
         <link href="css/mb.slider.css" media="all" rel="stylesheet" />
         <script src="js/jquery.js"></script>
@@ -19,7 +19,7 @@
             });
         });
         </script>
-        <script language="JavaScript" Type="text/javascript">
+        <script>
         <!--
         function popupMsg(theMsg) {
             alert(theMsg);
@@ -44,77 +44,77 @@
     </head>
     <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
         <div id="header">
-	        <h1>THOWC</h1>
-	        <h2>(Tashiro High Orbit Web Cannon)</h2>
+            <h1>THOWC</h1>
+            <h2>(Tashiro High Orbit Web Cannon)</h2>
         </div>
-	      <div id="layer1">
-		        <table id="table1">
-			          <tr>
-				            <td>
-					              <fieldset class="layer2">
-						            <legend>1. 攻撃先を選択(デフォルトはロシア大使館)</legend>
-						            <input type="text" id="target" value="https://tokyo.mid.ru/web/tokyo-ja" />
-					              </fieldset>
-				            </td>
-				            <td>
-					              <fieldset class="layer2">
-						            <legend>ゾンビネット(任意)</legend>
-						            <input type="button" id="hivebutton" onclick="load_hive();" value="Load data" />
-						            <input type="text" id="hiveURL" value="" />
- 	          				    </fieldset>
-				            </td>
-			          </tr>
-			          <tr>
-				            <td colspan="2">
-					              <fieldset class="layer2">
-						                <legend>2. 攻撃オプション(必須)</legend>
-						                <div class="title">間隔 (ms):</div>
-						                <div id="ex0">
-							                  <div id="sl0" class="mb_slider {maxVal:'1000', rangeColor:'#5696C0',negativeColor:'#183040', startAt:200, grid:1}" style="display:inline-block;*display:inherit;">
-						                        <!--空白-->
-								                </div>
-						                </div>
-						                <div class="title">追加メッセージ:</div>
-						                <input type="text" id="msg" value="北方領土返せや、ゴラァ" />
-					              </fieldset>
-				            </td>
-			          </tr>
-			          <tr>
-				            <td colspan="1">
-					              <fieldset class="layer2">
-						                <legend>3. 準備OK?</legend>
-						                <input type="button" id="start" onclick="start_stop();" value="IMMA CHARGING" />
-						                <span id="sl0_val" class="setVal"><input type="hidden" id="interval" class="val" value="100" /></span>
-						                <span id="sl1_val" class="setVal"><input type="hidden" id="calibre" class="val" value="1" /></span>
-					              </fieldset>
-				            </td>
-				            <td>
-					              <fieldset class="layer2">
-						                <legend>攻撃結果</legend>
-						                <div class="number">
-						                    <p id="counter_requested">0</p>of <span id="counter_tail">0</span>
-						                </div>
-						                <div class="hidde" id="state">stop</div>
-					              </fieldset>
-				            </td>
-			          </tr>
-		        </table>
-	      </div>
-	      <p id="footer">Designed by ~Anon~ | <a href="http://hoic.online/">http://hoic.online/</a></p>
-	      <script>
+        <div id="layer1">
+            <table id="table1">
+                <tr>
+                    <td>
+                        <fieldset class="layer2">
+                            <legend>1. 攻撃先を選択(デフォルトはロシア大使館)</legend>
+                            <input type="text" id="target" value="https://tokyo.mid.ru/web/tokyo-ja" />
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset class="layer2">
+                            <legend>ゾンビネット(任意)</legend>
+                            <input type="button" id="hivebutton" onclick="load_hive();" value="Load data" />
+                            <input type="text" id="hiveURL" value="" />
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <fieldset class="layer2">
+                            <legend>2. 攻撃オプション(必須)</legend>
+                            <div class="title">間隔 (ms):</div>
+                            <div id="ex0">
+                                <div id="sl0" class="mb_slider {maxVal:'1000', rangeColor:'#5696C0',negativeColor:'#183040', startAt:200, grid:1}" style="display:inline-block;*display:inherit;">
+                                    <!--空白-->
+                                </div>
+                            </div>
+                            <div class="title">追加メッセージ:</div>
+                            <input type="text" id="msg" value="北方領土返せや、ゴラァ" />
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1">
+                        <fieldset class="layer2">
+                            <legend>3. 準備OK?</legend>
+                            <input type="button" id="start" onclick="start_stop();" value="IMMA CHARGING" />
+                            <span id="sl0_val" class="setVal"><input type="hidden" id="interval" class="val" value="100" /></span>
+                            <span id="sl1_val" class="setVal"><input type="hidden" id="calibre" class="val" value="1" /></span>
+                        </fieldset>
+                    </td>
+                    <td>
+                        <fieldset class="layer2">
+                            <legend>攻撃結果</legend>
+                            <div class="number">
+                                <p id="counter_requested">0</p>of <span id="counter_tail">0</span>
+                            </div>
+                            <div class="hidde" id="state">stop</div>
+                        </fieldset>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <p id="footer">Designed by ~Anon~ | <a href="http://hoic.online/">http://hoic.online/</a></p>
+        <script>
         <!--
         //Disable right mouse click Script
-        
-		    var message = "Nope";
-        
-		    ///////////////////////////////////
+
+		var message = "右クリックは禁止でちゅよｗｗｗ";
+
+		///////////////////////////////////
         function clickIE4(){
             if (event.button == 2){
                 alert(message);
                 return false;
             }
-		    }
-        
+		}
+
         function clickNS4(e){
             if (document.layers||document.getElementById&&!document.all){
                 if (e.which==2||e.which==3){
@@ -123,7 +123,7 @@
                 }
             }
         }
-        
+
         if (document.layers){
             document.captureEvents(Event.MOUSEDOWN);
             document.onmousedown=clickNS4;
@@ -131,9 +131,9 @@
         else if (document.all&&!document.getElementById){
             document.onmousedown=clickIE4;
         }
-        
+
         document.oncontextmenu=new Function("alert(message);return false")
-        
+
         // --> 
         </script>
     </body>
