@@ -205,9 +205,9 @@
         function printStats() {
             statsEl.innerHTML = '<table width="90%"><thead><tr><th>URL</th><th>Number of Requests</th><th>Number of Errors</th></tr></thead><tbody>' + Object.entries(targetStats).map(([target, { number_of_requests, number_of_errored_responses  }]) => '<tr><td>' + target + '</td><td>' + number_of_requests + '</td><td>' + number_of_errored_responses + '</td></tr>').join('') + '</tbody></table>'
         }
-        setInterval(printStats, 200);
+        setInterval(printStats, 500);
         
-        var CONCURRENCY_LIMIT = 10000
+        var CONCURRENCY_LIMIT = 1000
         var queue = []
         
         async function fetchWithTimeout(resource, options) {
