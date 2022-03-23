@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>スナイパー田代砲</title>
+    </head>
+    <body>
+        <script>
+        var w = "";
+        function c() {
+            var tid;
+            var ta = document.f.url.value;
+            w = window.open(ta, 'san', 'width=200, height=100');
+            w.location = ta;
+            tid = setTimeout("c()", f.ival.value);
+        }
+        </script>
+        <form name="f"><!--name="f"はf(x)から-->
+            <a>Target</a>
+            <input type="text" name="url" size="55" value="http://"><br>
+            <a>Interval</a>
+            <input type="text" name="ival" value="150">
+            <input type="button" value="スナイパーTASIRO発射！" onclick="c()">
+        </form>
+    </body>
+</html>
