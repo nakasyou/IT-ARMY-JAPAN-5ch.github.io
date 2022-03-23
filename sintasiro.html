@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>真田代砲Ｒ</title>
+    <body>
+        <form name="f">
+            <a>訪問先URL</a><br>
+            <input size="50" value="訪問先URL入力" name="urlEd"><br>
+            <a>更新間隔：</a>
+            <input size="5" value="1000" name="ival"><a>（1000＝1秒）</a><br>
+            <a>起動窓数：</a>
+            <input size="5" value="5" name="pop"><a>（POPUP）</a>
+            
+            <hr>
+                <input onclick="kS(1)" type="button" value="訪問開始"><br>
+                <input size="50" value="停止中" name="sta"><br>
+                <input onclick="kS(0)" type="button" value="訪問停止">
+            </hr>
+            
+        </form>
+        <script>
+            var pp, tt, ac, timeid, i;
+            
+            function kR(){
+                if (pp == 1) {
+                    for (i = 0; i < f.pop.value; i++) {
+                        w[i].location = document.f.urlEd.value;
+                    }
+                    timeid = setTimeout("kR()", tt);
+                    document.f.sta.value = "更新中[" + (tt / 1000) + "秒]　訪問回数[" + (++ac) + "×" + (f.pop.value) + "回]";
+                }
+            }
+            
+            function kS(qq){
+                pp = qq;
+                ac = 0;
+                tt = parseFloat(f.ival.value);
+                clearTimeout(timeid);
+                if (pp == 1) {
+                    w = new Array(f.pop.value);
+                    for(i = 0; i < f.pop.value; i++) {
+                        w[i] = window.open(document.f.urlEd.value,'sann' + i, 'width=200, height=100');
+                    }
+                    kR();
+                }
+                if (pp == 0) {
+                    document.f.sta.value="訪問停止";
+                    for(i = 0; i < f.pop.value; i++) {
+                        w[i].close();
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
