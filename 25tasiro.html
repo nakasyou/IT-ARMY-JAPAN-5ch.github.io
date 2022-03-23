@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>２５連打田代砲</title>
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="adimage" content="201">
+        <meta http-equiv="adalign" content="right">
+        <meta name="keywords" content="田代砲,２５連打田代砲">
+        <meta name="description" content="「田代砲」を強化したもので、25個ものインラインフレームでURL先を秒単位で自動更新します。">
+    </head>
+    <body text="WHITE" bgcolor="BLACK">
+        <h1>２５連打田代砲 Ver0.6</h1><br>
+<strong>「田代砲」</strong>を強化したもので、25個ものインラインフレームでURL先を秒単位で自動更新します。
+<textarea>田代砲とは、
+ 初代田代砲は改良を重ねられ、現在では一般に「田代砲」と呼ばれるものには
+ 田代砲・超田代砲・超田代砲改・GaburiDuke（拡散田代砲）・連装田代砲
+ 田代砲軽量化版・メガ粒子田代砲・神田代砲・真田代砲、
+ また田代砲ではないが広義で田代砲と呼べるものに
+ 各種97式砲・各種VT砲・A-Born砲・あゆ砲・サハフ砲などが存在し、
+　それぞれ異なったスクリプトを用いている
+</textarea><br>
+        <form name="f">
+            <input size="100" type="text" name="urlEd" value="URL入力欄" onkeypress="key()"><br>
+            更新間隔（秒）
+            <input type="text" size="10" name="ival" value="10"><br>
+            <input type="button" value="自動更新開始" onclick="kS(1);">
+            <input type="text" size="50" name="sta" value="停止中">
+            <input type="button" value="自動更新停止" onclick="kS(0);"><br>
+        </form><br><br>
+        <div align="center">
+          <form>
+            <iframe name="chi1" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi2" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi3" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi4" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi5" data-ruffle-polyfilled="" width="50" height="50"></iframe><br clear="all">
+            <iframe name="chi6" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi7" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi8" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi9" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi10" data-ruffle-polyfilled="" width="50" height="50"></iframe><br clear="all">
+            <iframe name="chi11" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi12" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi13" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi14" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi15" data-ruffle-polyfilled="" width="50" height="50"></iframe><br clear="all">
+            <iframe name="chi16" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi17" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi18" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi19" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi20" data-ruffle-polyfilled="" width="50" height="50"></iframe><br clear="all">
+            <iframe name="chi21" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi22" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi23" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi24" data-ruffle-polyfilled="" width="50" height="50"></iframe>
+            <iframe name="chi25" data-ruffle-polyfilled="" width="50" height="50"></iframe><br clear="all">
+          </form>
+        </div>
+        
+        <script>
+        var pp, tt, uu, ac, timeid;
+        
+        function kR(){
+            if (pp == 1) {
+                top.chi1.location = uu;
+                top.chi2.location = uu;
+                top.chi3.location = uu;
+                top.chi4.location = uu;
+                top.chi5.location = uu;
+                top.chi6.location = uu;
+                top.chi7.location = uu;
+                top.chi8.location = uu;
+                top.chi9.location = uu;
+                top.chi10.location = uu;
+                top.chi11.location = uu;
+                top.chi12.location = uu;
+                top.chi13.location = uu;
+                top.chi14.location = uu;
+                top.chi15.location = uu;
+                top.chi16.location = uu;
+                top.chi17.location = uu;
+                top.chi18.location = uu;
+                top.chi19.location = uu;
+                top.chi20.location = uu;
+                top.chi21.location = uu;
+                top.chi22.location = uu;
+                top.chi23.location = uu;
+                top.chi24.location = uu;
+                top.chi25.location = uu;
+                
+                timeid = setTimeout("kR()", tt*1000);
+                document.f.sta.value="自動更新中("+ tt +"秒)　アクセス回数は"+25*(++ac)+"回です";
+            }
+        }
+        
+        function kS(qq){
+            pp = qq; ac = 0;
+            tt = parseFloat(f.ival.value);
+            if(isNaN(tt)) tt = 60000;
+            //安全装置　10秒以上の更新間隔で。
+            if(tt<1) tt = 1;
+            //安全装置ここまで
+            uu = f.urlEd.value;
+            clearTimeout(timeid);
+            if(pp == 1) {
+                kR();
+            }
+            else {
+                document.f.sta.value = "自動更新を停止しました。"
+            };
+        }
+        
+        function key(){
+            if(event.keyCode == 13){
+                uu = f.urlEd.value;
+                top.chi1.location = uu;
+                top.chi2.location = uu;
+                top.chi3.location = uu;
+                top.chi4.location = uu;
+                top.chi5.location = uu;
+                top.chi6.location = uu;
+                top.chi7.location = uu;
+                top.chi8.location = uu;
+                top.chi9.location = uu;
+                top.chi10.location = uu;
+                top.chi11.location = uu;
+                top.chi12.location = uu;
+                top.chi13.location = uu;
+                top.chi14.location = uu;
+                top.chi15.location = uu;
+                top.chi16.location = uu;
+                top.chi17.location = uu;
+                top.chi18.location = uu;
+                top.chi19.location = uu;
+                top.chi20.location = uu;
+                top.chi21.location = uu;
+                top.chi22.location = uu;
+                top.chi23.location = uu;
+                top.chi24.location = uu;
+                top.chi25.location = uu;
+                
+                kS(0);
+            }
+        }
+        </script>
+        <br><br>
+        ※<strong>田代砲</strong>使用時は常識の範囲内で決して悪用しないで下さい。問題が起きた際、一切責任を取りません。<br>
+    </body>
+</html>
