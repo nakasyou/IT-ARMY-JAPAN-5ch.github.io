@@ -38,7 +38,7 @@
             tt = parseFloat(f.ival.value);
             if (isNaN(tt)) tt = 60000;
             //安全装置　10秒以上の更新間隔で。
-            //if (tt < 10000) tt = 10000;
+            if (tt < 500) tt = 500;
             //安全装置ここまで
             uu = f.urlEd.value;
             clearTimeout(timeid);
