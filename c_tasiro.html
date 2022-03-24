@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>連射改造用TASHIRO Ver 1.2</title>
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="adimage" content="201">
+        <meta http-equiv="adalign" content="right"> 
+    </head>
+    <body text="BLACK" bgcolor="RED">
+        <h1> 連射改造用TASHIRO Ver1.2</h1><br><a>改造用の田代砲だよぉ。</a><br>
+        <form name="f">
+            <input size="100" type="text" name="urlEd" value="URL入力欄" onkeypress="key()"><br>
+            <input size="100" type="text" name="urlEd2" value="URL入力欄" onkeypress="key()"><br>
+            <a>更新間隔（秒）</a>
+            <input type="text" size="25" name="ival" value="10"><br><br>
+            <input type="button" value="普通の自動更新開始" onclick="kS(1);">
+            <input type="text" size="50" name="sta" value="停止中">
+            <input type="button" value="自動更新停止" onclick="kS(0);"><br><br>
+            <input type="button" value="安全装置など要らぬ 自動更新開始" onclick="kN(1)"><br><br><br><br>
+        </form>
+        <div align="center">
+            <form>
+                <iframe id="ccc" name="chi1" data-ruffle-polyfilled="" width="50" height="50"></iframe><br clear="all">
+                <iframe id="ccc" name="chi2" data-ruffle-polyfilled="" width="50" height="50"></iframe><br clear="all">
+            </form>
+        </div>
+        
+        <script>
+        var pp, tt, uu, uu2, ken, ac, timeid;
+        
+        function kR() {
+            if (pp == 1) { 
+                top.chi1.location = uu;
+                top.chi2.location = uu2;
+                
+                timeid = setTimeout("kR()", tt*1000);
+                
+                if (ken == 1) {
+                    document.f.sta.value="わが生涯に一片の悔いなし！！！("+ tt +"秒)　"+2*(++ac)+"連打";
+                }
+                else {
+                    document.f.sta.value="普通に自動更新中("+ tt +"秒)　アクセス回数は"+2*(++ac)+"回です";
+                }
+            }
+        }
+        
+        function kS(qq) {
+            pp = qq;
+            ac = 0;
+            tt = parseFloat(f.ival.value);
+            ken = 0;
+            
+            if (isNaN(tt)) {
+                tt = 60000;
+            }
+            if (tt < 1) {
+                tt = 1;
+            }
+            
+            uu = f.urlEd.value;
+            uu2 = f.urlEd2.value;
+            
+            if (uu == location.href) {
+                location.href = "http://prkorea.com/";
+            }
+            if (uu2 == location.href) {
+                location.href = " http://prkorea.com/";
+            }
+            
+            clearTimeout(timeid);
+            
+            if (pp == 1) {
+                kR();
+            }
+            else {
+                document.f.sta.value="自動更新を停止しました。";
+            }
+        }
+        
+        function kN(qq){
+            pp = qq;
+            ac = 0;
+            tt = parseFloat(f.ival.value);
+            ken = 1;
+            
+            if (isNaN(tt)) {
+                tt = 60000;
+            }
+            if (tt > 1) {
+                tt = 0.1;
+            }
+            
+            uu = f.urlEd.value;
+            uu2 = f.urlEd2.value;
+            
+            if (uu == location.href) {
+                location.href = " http://prkorea.com/";
+            }
+            if (uu2 == location.href) {
+                location.href = " http://prkorea.com/";
+            }
+            
+            clearTimeout(timeid);
+            
+            if (pp == 1) {
+                kR();
+            }
+            else {
+                document.f.sta.value="自動更新を停止しました。";
+            }
+        }
+        
+        function key(){
+            if (event.keyCode == 13) {
+                uu = f.urlEd.value;
+                uu2 = f.urlEd2.value;
+                top.chi1.location = uu;
+                top.chi2.location = uu;
+                kS(0);
+            }
+        }
+        
+        </script>
+    </body>
+</html>
