@@ -1,0 +1,58 @@
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>メガ粒子田代砲unlimited</title>
+    </head>
+    <body>
+        このページはＵＲＬを指定して訪問・自動更新するものです。<br>
+        1ミリ秒単位です。<br>
+        <form name="f">
+            <input size="100" type="text" name="urlEd" value="ここにURLを入力してね♪" onkeypress="key()"><br>
+            更新間隔（単位ミリ秒）
+            <input type="text" size="10" name="ival" value="1"><br>
+            <input type="button" value="自動更新開始！" onclick="kS(1);">
+            <input type="text" size="50" name="sta" value="停止中">
+            <input type="button" value="自動更新停止" onclick="kS(0);"><br>
+        </form>
+        <form>
+            <iframe name="chi" data-ruffle-polyfilled="" width="100%" height="80%">
+                iframe 対応のブラウザが必要です
+            </iframe>
+        </form>
+        <script>
+        var pp, tt, uu, ac, timeid;
+        
+        function kR(){
+            if (pp == 1) { 
+                top.chi.location = uu;
+                timeid = setTimeout("kR()", tt);
+                document.f.sta.value = "自動更新中("+ (tt / 1000) +"秒)　アクセス回数は"+(++ac)+"回です";
+            }
+        }
+        
+        function kS(qq){
+            pp = qq;
+            ac = 0;
+            tt = parseFloat(f.ival.value);
+            if (isNaN(tt)) tt = 1000;
+            uu = f.urlEd.value;
+            clearTimeout(timeid);
+            if (pp == 1) {
+                kR();
+            }
+            else {
+                document.f.sta.value = "自動更新を停止しました。";
+            }
+        }
+        
+        function key() {
+            if (event.keyCode == 13) {
+                uu = f.urlEd.value;
+                top.chi.location = uu;
+                
+                kS(0);
+            }
+        }
+        </script>
+    </body>
+</html>
