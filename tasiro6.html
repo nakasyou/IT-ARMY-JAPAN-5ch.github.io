@@ -22,10 +22,10 @@
             iframe 対応のブラウザが必要です
         </iframe>
         <script>
-        var pp, tt, uu, ac, timeid, timeied, wind;
+        var pp, tt, uu, ac, timeid, wind;
         
         function display() {
-            wind = window.open(uu, 'san', 'WIDTH400,height=400');
+            wind = window.open(uu, 'san', 'WIDTH400, height=400');
             tashiro();
         }
         
@@ -48,7 +48,7 @@
             tt = parseFloat(f.ival.value);
             if (isNaN(tt)) {tt = 60000;}
             //安全装置　10秒以上の更新間隔で。
-            //if(tt<10000) tt=10000;
+            //if(tt<10000) {tt = 10000;}
             //安全装置ここまで
             uu = f.urlEd.value;
             clearTimeout(timeid);
