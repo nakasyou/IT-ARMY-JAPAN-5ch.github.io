@@ -76,18 +76,15 @@
             <script>
             var wind = "";
             var add = "";
-            function display(){
-                add = document.f.address.value;
+            function display() {
+                add = f.address.value;
                 wind = window.open(add, 'san', 'width=400, height=400');
-                if (f.inter.value < 200) {
-                    f.inter.value = "200";
-                }
                 tashiro();
             }
             
-            function tashiro(){
+            function tashiro() {
                 wind.location = add;
-                document.f.fired.value++;
+                f.fired.value++;
                 setTimeout("tashiro();", f.inter.value);
             }
             </script>
