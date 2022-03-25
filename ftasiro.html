@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>田代ファンネルver1.2</title>
+    </head>
+    <body>
+        <form name="f">
+        <a>田代ファンネルver1.1</a><br>
+        <a>ブラウザの設定でjavascriptは「有効にする」にしてください</a><br>
+        発射目標[<input type="text" name="url" size="60" value="http://">
+        ]射撃間隔:<input type="text" name="ival" size="6" value="500">ms
+        <br><input type="button" value="田代ファンネル試射！（x1）" onclick="one();">
+        <script>
+        function one() {
+            var tid;
+            var tf1 = ("url()", f.url.value);
+            w = window.open(tf1, 'san1', 'WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("one()", f.ival.value);
+        }
+        </script>
+        <br><input type="button" value="田代ファンネルx2発射！" onclick="two();">
+        <script>
+        function two() {
+            var tid;
+            var tf1 = ("url()", f.url.value);
+            w = window.open(tf1, 'san1', 'WIDTH=20,height=100');
+            var tid;var tf2 = ("url()", f.url.value);
+            w = window.open(tf2,'san2','WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("two()", f.ival.value);
+            w.location = tf2;
+            tid = setTimeout("two()", f.ival.value);
+        }
+        </script>
+        <input type="button" value="田代ファンネルx3発射！" onclick="three();">
+        <script>
+        function three() {
+            var tid;
+            var tf1 = ("url()", f.url.value);
+            w = window.open(tf1, 'san1', 'WIDTH=20,height=100');
+            var tid;
+            var tf2 = ("url()", f.url.value);
+            w = window.open(tf2, 'san2', 'WIDTH=20,height=100');
+            var tid;
+            var tf3 = ("url()", f.url.value);
+            w = window.open(tf3, 'san3', 'WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("three()", f.ival.value);
+            w.location = tf2;
+            tid = setTimeout("three()", f.ival.value);
+            w.location = tf3;
+            tid = setTimeout("three()", f.ival.value);
+        }
+        </script>
+        <input type="button" value="田代ファンネルx4発射！" onclick="four();">
+        <script>
+        function four() {
+            var tid;
+            var tf1 = ("url()", f.url.value);
+            w = window.open(tf1, 'san1', 'WIDTH=20,height=100');
+            var tid;
+            var tf2 = ("url()", f.url.value);
+            w = window.open(tf2, 'san2', 'WIDTH=20,height=100');
+            var tid;
+            var tf3 = ("url()", f.url.value);
+            w = window.open(tf3, 'san3', 'WIDTH=20,height=100');
+            var tid;
+            var tf4 = ("url()", f.url.value);
+            w = window.open(tf4, 'san4', 'WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("four()", f.ival.value);
+            w.location = tf2;
+            tid = setTimeout("four()", f.ival.value);
+            w.location = tf3;
+            tid = setTimeout("four()", f.ival.value);
+            w.location = tf4;
+            tid = setTimeout("four()", f.ival.value);
+        }
+        </script>
+        <input type="button" value="田代ファンネルx5発射！" onclick="five();">
+        <script>
+        function five() {
+            var tid;
+            var tf1 = ("url()", f,url.value);
+            w = window.open(tf1, 'san1', 'WIDTH=20,height=100');
+            var tid;
+            var tf2 = ("url()", f.url.value);
+            w = window.open(tf2, 'san2', 'WIDTH=20,height=100');
+            var tid;
+            var tf3 = ("url()", f.url.value);
+            w = window.open(tf3, 'san3', 'WIDTH=20,height=100');
+            var tid;
+            var tf4 = ("url()", f.url.value);
+            w = window.open(tf4, 'san4', 'WIDTH=20,height=100');
+            var tid;
+            var tf5 = ("url()", f.url.value);
+            w = window.open(tf5, 'san5', 'WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("five()", f.ival.value);
+            w.location = tf2;
+            tid = setTimeout("five()", f.ival.value);
+            w.location = tf3;
+            tid = setTimeout("five()", f.ival.value);
+            w.location = tf4;
+            tid = setTimeout("five()", f.ival.value);
+            w.location = tf5;
+            tid = setTimeout("five()", f.ival.value);
+        }
+        </script>
+        <input type="button" value="田代ファンネルx8発射！" onclick="eight();">
+        <script>
+        function eight() {
+            var tid;
+            var tf1 = ("url()", f.url.value);
+            w = window.open(tf1, 'san1', 'WIDTH=20,height=100');
+            var tid;
+            var tf2 = ("url()", f.url.value);
+            w = window.open(tf2, 'san2', 'WIDTH=20,height=100');
+            var tid;
+            var tf3 = ("url()", f.url.value);
+            w = window.open(tf3, 'san3', 'WIDTH=20,height=100');
+            var tid;
+            var tf4 = ("url()", f.url.value);
+            w = window.open(tf4,'san4','WIDTH=20,height=100');
+            var tid;
+            var tf5 = ("url()", f.url.value);
+            w = window.open(tf5, 'san5', 'WIDTH=20,height=100');
+            var tid;
+            var tf6 = ("url()", f.url.value);
+            w = window.open(tf6, 'san6', 'WIDTH=20,height=100');
+            var tid;
+            var tf7 = ("url()", f.url.value);
+            w = window.open(tf7, 'san7', 'WIDTH=20,height=100');
+            var tid;
+            var tf8 = ("url()", f.url.value);
+            w = window.open(tf8, 'san8', 'WIDTH=20,height=100');
+            w.location = tf1;
+            tid = setTimeout("eight()", f.ival.value);
+            w.location = tf2;
+            tid = setTimeout("eight()", f.ival.value);
+            w.location = tf3;
+            tid = setTimeout("eight()", f.ival.value);
+            w.location = tf4;
+            tid = setTimeout("eight()", f.ival.value);
+            w.location = tf5;
+            tid = setTimeout("eight()", f.ival.value);
+            w.location = tf6;
+            tid = setTimeout("eight()", f.ival.value);
+            w.location = tf7;
+            tid = setTimeout("eight()", f.ival.value);
+            w.location = tf8;
+            tid = setTimeout("eight()", f.ival.value);
+        }
+        </script>
+        </form>
+    </body>
+</html>
