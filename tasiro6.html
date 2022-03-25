@@ -1,0 +1,76 @@
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>改最終田代砲</title>
+    </head>
+    <body>
+        <form name="f">
+        <font size="4" color="#000000">改最終田代砲</font><br><br>
+        最終田代砲は超田代砲改 Ver.1.2とメガ粒子田代砲を合体、改良したものです<br>
+        改最終田代砲は\超田代砲改 Ver.1.3 プチ改造大東亜共栄砲と最終田代砲をすこし合体、改良したものです<br><br>
+        最終田代砲を使って起きた法律的問題は製作者は責任を負いません｡<br><br>
+        製作者　偽造モナ<br>改造者　われ<br><br>
+        1ミリ秒単位です。<br>
+        <input size="100" type="text" name="urlEd" value="ここにURLを入力してね♪" onkeypress="key()"><br>
+        更新間隔（単位ミリ秒）
+        <input type="text" size="10" name="ival" value="1"><br>
+        <input type="button" value="発射" onclick="kS(1);">
+        <input type="text" size="50" name="sta" value="停止中">
+        <input type="button" value="発射停止" onclick="kS(0);"><br>
+        <iframe id="ccc" name="chi" src="xx.html" data-ruffle-polyfilled="" width="100%" height="80%">
+            iframe 対応のブラウザが必要です
+        </iframe>
+        <script>
+        var pp, tt, uu, ac, timeid, timeied, wind;
+        
+        function display() {
+            wind = window.open(uu, 'san', 'WIDTH400,height=400');
+            tashiro();
+        }
+        
+        function tashiro() {
+            wind.location = uu;
+            setTimeout("tashiro()", tt);
+        }
+        
+        function kR() {
+            if (pp == 1) {
+                top.chi.location = uu;
+                timeid = setTimeout("kR()", tt);
+                f.sta.value="自動更新中("+ (tt/1000) +"秒)　アクセス回数は"+ (++ac) +"回です";
+            }
+        }
+        
+        function kS(qq) {
+            pp = qq;
+            ac = 0;
+            tt = parseFloat(f.ival.value);
+            if (isNaN(tt)) {tt = 60000;}
+            //安全装置　10秒以上の更新間隔で。
+            //if(tt<10000) tt=10000;
+            //安全装置ここまで
+            uu = f.urlEd.value;
+            clearTimeout(timeid);
+            if (pp == 1) {
+                kR();
+                display();
+            }
+            else {
+                wind.close();
+                f.sta.value="自動更新を停止しました。";
+            }
+        }
+        
+        function key() {
+            if (event.keyCode == 13) {
+                uu = f.urlEd.value;
+                top.chi.location = uu;
+                kS(0);
+            }
+        }
+        </script>
+        製作者　偽造モナ<br>
+        改造者　われ
+        </form>
+    </body>
+</html>
