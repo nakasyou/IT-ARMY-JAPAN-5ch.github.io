@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>超田代砲改 Ver.1.3</title>
         <script>
-        function closewin(){
+        function closewin() {
             wind.close();
             document.location.reload();
         }
@@ -15,7 +15,7 @@
         var wind = "";
         var add = "";
         function display() {
-            add = document.f.address.value;
+            add = f.address.value;
             wind = window.open(add, 'target', 'width=400, height=400');
             if (f.inter.value < 200) {
                 f.inter.value = "200";
@@ -25,7 +25,7 @@
         
         function tashiro() {
             wind.location = add;
-            document.f.fired.value++;
+            f.fired.value++;
             setTimeout("tashiro();", f.inter.value);
         }
         </script>
