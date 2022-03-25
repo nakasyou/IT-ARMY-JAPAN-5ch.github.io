@@ -3,32 +3,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>超田代砲改 Ver.1.3</title>
-        <script>
-        function closewin() {
-            wind.close();
-            document.location.reload();
-        }
-        </script>
     </head>
     <body>
-        <script>
-        var wind = "";
-        var add = "";
-        function display() {
-            add = f.address.value;
-            wind = window.open(add, 'target', 'width=400, height=400');
-            if (f.inter.value < 200) {
-                f.inter.value = "200";
-            }
-            tashiro();
-        }
-        
-        function tashiro() {
-            wind.location = add;
-            f.fired.value++;
-            setTimeout("tashiro();", f.inter.value);
-        }
-        </script>
         <form name="f">
             <font size="4" color="#000000">超田代砲改 Ver.1.3</font><br><br>
             <a>目標アドレス:</a><br>
@@ -37,8 +13,33 @@
             <input type="text" size="5" name="inter" value="200"><a>ミリ秒</a><br><br>
             <a>既発射弾数:</a><br>
             <input type="text" name="fired" value="0"><br>
-            <input type="button" value="発射" onclick="display()">
-            <input type="button" value="砲撃終了" onclick="closewin()">
+            <input onclick="display(1)" type="button" value="発射">
+            <input onclick="display(0)" type="button" value="砲撃終了">
         </form>
+        <script>
+        var wind, add, q, timeid;
+        
+        function tashiro() {
+            wind.location = add;
+            timeid = setTimeout("tashiro()", f.inter.value);
+            f.fired.value++;
+        }
+        
+        function display(q) {
+            clearTimeout(timeid);
+            if (q != 0) {
+                add = f.address.value;
+                wind = window.open(add, 'target', 'width=400, height=400');
+                if (f.inter.value < 200) {
+                    f.inter.value = "200";
+                }
+                tashiro();
+            }
+            if (q == 0) {
+                f.fired.value = "0";
+                wind.close();
+            }
+        }
+        </script>
     </body>
 </html>
