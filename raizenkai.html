@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>雷禅砲-改</title> 
+    </head>
+    <body style="color: rgb(0, 0, 0);background-color: rgb(153, 153, 153);" vlink="#3333ff" link="#3333ff" alink="#33cc00">
+        <center>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <center>
+                                <font size="5">雷禅砲-改+</font><br>
+                                <i><font color="#ff0000">Raizen Cannon (改) by LOFT</font></i><br>
+                                <i><font color="#ff0000">Raizen Cannon (改+) by われ</font></i><br><br>
+                                <script>
+                                var MyMon0, MyDay0, MyHour0, MyMin0, MyMon1, MyDay1, MyHour1, MyMin1, MySec0, MySec1, baku, i, pp, tt, ac, timeid; 
+                                
+                                function Watch() {
+                                    now = new Date(); 
+                                    month = now.getMonth() + 1;
+                                    day = now.getDate();
+                                    hour = now.getHours();
+                                    minute = now.getMinutes();
+                                    second = now.getSeconds();
+                                    if (hour < 10) {
+                                        hour = '0' + hour;
+                                    }
+                                    if (minute < 10) {
+                                        minute = '0' + minute;
+                                    }
+                                    if (second < 10) {
+                                        second = '0' + second;
+                                    }
+                                    document.form.watch.value='今日は：' + month + '月' + day + '日　今の時間は：' + hour + '時' + minute + '分' + second + '秒です'; 
+                                    setTimeout("Watch()", 1000);
+                                    MyMon0 = x.t1.value;
+                                    MyMon1 = x.t5.value;
+                                    MyDay0 = x.t2.value;
+                                    MyDay1 = x.t6.value;
+                                    MyHour0 = x.t3.value;
+                                    MyHour1 = x.t7.value;
+                                    MyMin0 = x.t4.value;
+                                    MyMin1 = x.t8.value;
+                                    MySec0 = 0;
+                                    MySec1 = 0;
+                                    if (MyMon0 == month && MyDay0 == day && MyHour0 == hour && MyMin0 == minute && MySec0 == second) {
+                                        set();
+                                        start();
+                                        pp = 1;
+                                        kR();
+                                    }
+                                    if (MyMon1 == month && MyDay1 == day && MyHour1 == hour && MyMin1 == minute && MySec1 == second) {
+                                        stop();
+                                        pp = 0;
+                                    }
+                                }
+                                
+                                function kR() {
+                                    if (pp == 1) {
+                                        for (i = 0; i < x.pop.value; i++) {
+                                            w[i].location = x.urlEd.value;
+                                        }
+                                        timeid = setTimeout("kR()", tt);
+                                        x.sta.value = "－Refresh Now......Interval：["+ (tt/1000) +"s]－－Count：["+ (++ac) +"×"+ (x.pop.value) +"w]－";
+                                    }
+                                }
+                                
+                                function kS(qq) {
+                                    pp = qq;
+                                    set();
+                                    if (pp == 1) {
+                                        start();
+                                        kR();
+                                    }
+                                    if (pp == 0) {
+                                        stop();
+                                    }
+                                }
+                                
+                                function start() {
+                                    w = new Array(x.pop.value);
+                                    for (i = 0; i < x.pop.value; i++) {
+                                        w[i] = window.open(x.urlEd.value, 'sann' + i, 'width=200, height=100');
+                                    }
+                                }
+                                
+                                function stop() {
+                                    for (i = 0; i < x.pop.value; i++) {
+                                        w[i].close();
+                                    }
+                                    x.sta.value="－STOP－";
+                                }
+                                
+                                function set() {
+                                    ac = 0;
+                                    tt = parseFloat(x.ival.value);
+                                    clearTimeout(timeid);
+                                }
+                                
+                                function display() {
+                                    top.win.location = x.urlEd.value;
+                                }
+                                </script>
+                                <form name="form">
+                                    <input name="watch" size="60" readonly="readonly">
+                                </form><br>
+                                <form name="x">
+                                <iframe name="win" src="#" data-ruffle-polyfilled="" width="100%" height="240"></iframe>
+                                <hr>
+                                [砲門先URL]
+                                <br><input size="80" type="text" name="urlEd" value=""> 
+                                <br><input type="button" value="訪問先確認-1発" onclick="display();"> 
+                                <hr>
+                                </center>★設定<br><center>
+                                [砲門間隔(ミリ秒)]　　<input size="10" type="text" name="ival" value="100"><br>
+                                [一斉開門数]　　　　　<input size="10" type="text" name="pop" value="3">
+                                <hr>
+                                <div style="text-align: center;">[マニュアル]－[オート：月/日/時/分]<br> </div>
+                                <input type="button" value="砲門開始！" onclick="kS(1);">－展開－[<input size="1" type="text" name="t1" value="">/<input size="1" type="text" name="t2" value="">/<input size="1" type="text" name="t3" value="">/<input size="1" type="text" name="t4" value="">] <br>
+                                <div style="text-align: center;">
+                                    <input type="button" value="訪問辞め！" onclick="kS(0);">－閉門－[<input size="1" type="text" name="t5" value="">/<input size="1" type="text" name="t6" value="">/<input size="1" type="text" name="t7" value="">/<input size="1" type="text" name="t8" value="">] 
+                                </div>
+                                <hr style="margin-left: auto; margin-right: auto;" width="450"> 
+                                <div style="text-align: center;"><br>
+                                    <script>
+                                    Watch();
+                                    </script>
+                                </div>
+                                </form>
+                            </center>
+                        </td>
+                    </tr>
+                </tbody>
+            </table> 
+        </center>
+    </body>
+</html>
